@@ -22,9 +22,9 @@ int main() {
         array[i] = generateString(20-i, 20 - (int)(i/2) + 2);
         test[i] = 20-i;
     }
-    
-    heapify(array, 0, a_size);
-    _heapify(test, 0, a_size);
+
+    heapSort(array, a_size);
+    _heapSort(test, a_size);
     for (int i = 0; i < a_size; ++i) {
         printf("%d\t\t%s\n", test[i], array[i]);
     }
