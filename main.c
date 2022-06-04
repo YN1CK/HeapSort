@@ -16,14 +16,17 @@ char* generateString(int n, int base) {
 }
 
 int main() {
-    char** array[a_size];
+    char** array = malloc(sizeof(char*) * a_size);
+    int* test = malloc(sizeof(int) * a_size);
     for (int i = 0; i < a_size; ++i) {
         array[i] = generateString(20-i, 20 - (int)(i/2) + 2);
+        test[i] = 20-i;
     }
     
     heapify(array, 0, a_size);
+    _heapify(test, 0, a_size);
     for (int i = 0; i < a_size; ++i) {
-        printf("%s\n", array[i]);
+        printf("%d\t\t%s\n", test[i], array[i]);
     }
     
     return 0;

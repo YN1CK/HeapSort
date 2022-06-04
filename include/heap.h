@@ -12,6 +12,6 @@ void _heapSort(int* array, int length);
 void swap(char** a, char** b);
 void heapify(char** array, int rootIndex, int length);
 void heapSort(char** array, int length);
-int isGreater(char* leftString, char* rightString);
+int leftIsGreater(char* leftString, char* rightString);
 
 #endif//HEAP_H
