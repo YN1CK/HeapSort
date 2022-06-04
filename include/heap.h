@@ -3,7 +3,7 @@
 
 // prototype functions (starting with an underscore)
 void _swap(int* a, int *b);
-void _heapify(int* array, int root, int length);
+void _heapify(int* array, int rootIndex, int length);
 void _heapSort(int* array, int length);
 
 // final functions

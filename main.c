@@ -3,28 +3,18 @@
 
 #include "heap.h"
 
+#define a_size 15
+
 int main() {
+    int array[a_size] = {1, 15, 2, 14, 3, 13, 4, 12, 5, 11, 6, 10, 7, 9, 8};
 
-    int* a = malloc(sizeof(int*));
-    int* b = malloc(sizeof(int*));
+    _heapify(array, 0, a_size);
 
-    *a = 3;
-    *b = 6;
-    printf("%d, %d\n", *a, *b);
-    _swap(a, b);
-    printf("%d, %d\n", *a, *b);
-
-    *a = 5;
-    *b = 2;
-    printf("%d, %d\n", *a, *b);
-    _swap(a, b);
-    printf("%d, %d\n", *a, *b);
-
-    *a = 10;
-    *b = 10;
-    printf("%d, %d\n", *a, *b);
-    _swap(a, b);
-    printf("%d, %d\n", *a, *b);
+    for (int j = 0; j < a_size; ++j) {
+        printf("%d - ", array[j]);
+    }
+    printf("\n");
+    
 
     return 0;
 }
