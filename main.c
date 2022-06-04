@@ -5,16 +5,26 @@
 
 #define a_size 15
 
-int main() {
-    int array[a_size] = {27, 24, 29, 28, 22, 27, 20, 19, 28, 16, 20, 29, 26, 18, 25};
-
-    _heapSort(array, a_size);
-
-    for (int j = 0; j < a_size; ++j) {
-        printf("%d - ", array[j]);
+char* generateString(int n, int base) {
+    const char* literals = "abcdefghijklmnopqrstuvwxyz";
+    char* tmp = malloc(sizeof(char) * n);
+    for (int i = 0; i < n-1; ++i) {
+        *(tmp + sizeof(char) * i) = literals[base+i];
     }
-    printf("\n");
-    
+    tmp[n-1] = '\0';
+    return tmp;
+}
 
+int main() {
+    char** array[a_size];
+    for (int i = 0; i < a_size; ++i) {
+        array[i] = generateString(20-i, 20 - (int)(i/2) + 2);
+    }
+    
+    heapify(array, 0, a_size);
+    for (int i = 0; i < a_size; ++i) {
+        printf("%s\n", array[i]);
+    }
+    
     return 0;
 }
