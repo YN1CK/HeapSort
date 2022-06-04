@@ -17,16 +17,16 @@ char* generateString(int n, int base) {
 
 int main() {
     char** array = malloc(sizeof(char*) * a_size);
-    int* test = malloc(sizeof(int) * a_size);
+    char** test = malloc(sizeof(char*) * a_size);
     for (int i = 0; i < a_size; ++i) {
-        array[i] = generateString(20-i, 20 - (int)(i/2) + 2);
-        test[i] = 20-i;
+        array[i] = generateString(20 - i, 9 - (int)(i * .7));
+        test[i] = generateString(20 - i, 9 - (int)(i * .7));
     }
 
     heapSort(array, a_size);
-    _heapSort(test, a_size);
+    
     for (int i = 0; i < a_size; ++i) {
-        printf("%d\t\t%s\n", test[i], array[i]);
+        printf("%s\n",  array[i]);
     }
     
     return 0;

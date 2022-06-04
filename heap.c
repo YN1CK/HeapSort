@@ -54,10 +54,10 @@ void _heapSort(int* array, int length) {
 
 // final functions
 void swap(char** a, char** b) {
-    char** temp;
-    temp = a;
-    a = b;
-    b  =temp;
+    char* temp;
+    temp = *a;
+    *a = *b;
+    *b  = temp;
 }
 
 void heapify(char** array, int rootIndex, int length) {
@@ -84,7 +84,9 @@ void heapify(char** array, int rootIndex, int length) {
 
     // swap if newRoot has changed and continue heapifying with newRoot
     if (newRoot != rootIndex) {
+        printf("SWAP: %s\t::\t%s\n", array[rootIndex], array[newRoot]);
         swap(&array[rootIndex], &array[newRoot]);
+        printf("SWED: %s\t::\t%s\n\n", array[rootIndex], array[newRoot]);
         heapify(array, newRoot, length);
     }
 }
@@ -105,14 +107,15 @@ void heapSort(char** array, int length) {
 
 int leftIsGreater(char* leftString, char* rightString) {
     int index = 0;
+    int isBigger = 0;
     while (leftString[index] || rightString[index]) {
         if (leftString[index] > rightString[index]) {
-            return 1;
+            isBigger =  1;
         }
         if (!leftString[index]) {
             break;
         }
         ++index;
     }
-    return 0;
+    return isBigger;
 }
