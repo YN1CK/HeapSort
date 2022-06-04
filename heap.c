@@ -34,3 +34,18 @@ void _heapify(int* array, int rootIndex, int length) {
         _heapify(array, newRoot, length);
     }
 }
+
+void _heapSort(int* array, int length) {
+    
+    // building the heap bottom to top
+    for (int i = length / 2 - 1; i >= 0; --i) {
+        _heapify(array, i, length);
+    }
+
+    // heap sort
+    for (int i = length - 1; i >= 0; --i) {
+        _swap(&array[0], &array[i]);
+
+        _heapify(array, 0, i);
+    }
+}
