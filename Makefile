@@ -4,8 +4,8 @@ NAME		=	HeapSort
 CC		=	gcc
 CFLAGS	=	-Wall -g -I include
 LDFLAGS	=	-Wall -g
-INCLUDE	=	heap.h stringops.h
-OBJECTS	=	heap.o stringops.o main.o
+INCLUDE	=	unittests.h heap.h stringops.h
+OBJECTS	=	unittests.o heap.o stringops.o main.o
 
 # compile program listed in $(NAME)
 $(NAME): $(OBJECTS)

@@ -73,20 +73,18 @@ void heapify(char** array, int rootIndex, int length) {
     childRight = 2 * rootIndex + 2;
 
     // check if child is in array and if it's larger than newRoot
-    if ((childLeft < length) && leftIsGreater(array[childLeft], array[newRoot])) {
+    if ((childLeft < length) && (strcasecmp(array[childLeft], array[newRoot]) + 1)) {
         newRoot = childLeft;
     }
     
     // check if other child is also in array and if its larger than newRoot
-    if ((childRight < length) && leftIsGreater(array[childRight], array[newRoot])) {
+    if ((childRight < length) && (strcasecmp(array[childRight], array[newRoot]) + 1)) {
         newRoot = childRight;
     }
 
     // swap if newRoot has changed and continue heapifying with newRoot
     if (newRoot != rootIndex) {
-        printf("SWAP: %s\t::\t%s\n", array[rootIndex], array[newRoot]);
         swap(&array[rootIndex], &array[newRoot]);
-        printf("SWED: %s\t::\t%s\n\n", array[rootIndex], array[newRoot]);
         heapify(array, newRoot, length);
     }
 }
@@ -103,19 +101,4 @@ void heapSort(char** array, int length) {
         swap(&array[0], &array[i]);
         heapify(array, 0, i);
     }
-}
-
-int leftIsGreater(char* leftString, char* rightString) {
-    int index = 0;
-    int isBigger = 0;
-    while (leftString[index] || rightString[index]) {
-        if (leftString[index] > rightString[index]) {
-            isBigger =  1;
-        }
-        if (!leftString[index]) {
-            break;
-        }
-        ++index;
-    }
-    return isBigger;
 }

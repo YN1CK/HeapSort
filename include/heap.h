@@ -2,6 +2,7 @@
 #define HEAP_H
 
 #include <stdio.h>
+#include <string.h>
 
 // prototype functions (starting with an underscore)
 void _swap(int* a, int *b);
