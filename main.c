@@ -7,31 +7,14 @@
 
 int main() {
 
-    FILE *data = fopen("runtime.csv", "a+");
-    long long tStart;
-    long long tStop;
-    unsigned long size = 100000;
-    char** array = malloc(sizeof(char*) * size);
+    unsigned long cases[] =  {100000, 200000, 300000, 
+                            400000, 500000, 600000, 
+                            700000, 800000, 900000, 
+                            1000000, 2000000, 4000000, 8000000};
 
-    // generating array
-    for (unsigned long i = 0; i < size; ++i) {
-        array[i] = generateRandomString(16);
+    for (int i = 0; i < 13; ++i) {
+        testSpeed(cases);
     }
-
-    // start timer
-    tStart = timeInMilliseconds();
-    
-    //sort
-    heapSort(array, size);
-
-    // stop timer
-    tStop = timeInMilliseconds();
-    
-    // print to terminal and file
-    printf("Time needed: %lld ms\n", tStop - tStart);
-
-    fprintf(data, "%ld, %lld\n", size, tStop - tStart);
-    fclose(data);
 
     return EXIT_SUCCESS;
 }

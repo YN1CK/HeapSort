@@ -61,3 +61,30 @@ long long timeInMilliseconds(void) {
     gettimeofday(&tv,NULL);
     return (((long long)tv.tv_sec)*1000)+(tv.tv_usec/1000);
 }
+
+void testSpeed(unsigned long size) {
+    FILE* data = fopen("runtime.csv", "a+");
+    long long tStart;
+    long long tStop;
+    char** array = malloc(sizeof(char*) * size);
+
+    // generating array
+    for (unsigned long i = 0; i < size; ++i) {
+        array[i] = generateRandomString(16);
+    }
+
+    // start timer
+    tStart = timeInMilliseconds();
+    
+    //sort
+    heapSort(array, size);
+
+    // stop timer
+    tStop = timeInMilliseconds();
+    
+    // print to terminal and file
+    printf("Time needed: %lld ms\n", tStop - tStart);
+
+    fprintf(data, "%ld, %lld\n", size, tStop - tStart);
+    fclose(data);
+}

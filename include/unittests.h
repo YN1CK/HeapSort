@@ -15,4 +15,6 @@ int testSort(unsigned long cases);
 
 long long timeInMilliseconds(void);
 
+void testSpeed(unsigned long size);
+
 #endif//UNITTESTS_H
