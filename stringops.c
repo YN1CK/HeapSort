@@ -15,5 +15,26 @@ char* generateLinearString(int n, unsigned long x) {
     while (rtmp != tmp) {
         *--rtmp = 'a';
     }
+
+    printf("%s\n", tmp);
+
     return tmp;
+}
+
+char* generateRandomString(int length) {
+
+    // allocate data
+    char* temp;
+    temp = malloc(sizeof(char) * length + 1);
+    const char* base = "abcdefghijklmnopqrstuvwxyz";
+
+
+ 
+    for (int i = 0; i < length - 1; ++i) {
+        srand(time(NULL) * rand() + rand() % 15);
+        temp[i] = base[rand() % 26];
+        }
+    temp[length-1] = '\0';
+
+    return temp;
 }

@@ -7,4 +7,6 @@
 
 char* generateLinearString(int n, unsigned long x);
 
+char* generateRandomString(int length);
+
 #endif//STRINGOPS_H
