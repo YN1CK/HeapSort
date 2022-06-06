@@ -1,15 +1,35 @@
 #include "unittests.h"
 
+int _testSort(int cases) {
+    int* array = malloc(sizeof(int) * cases);
+    int* control = malloc(sizeof(int) * cases);
+    int result = 0;
+
+    for (int i = 0; i < cases; ++i) {
+        array[i] = cases - (i + 1);
+        control[i] = i;
+    }
+
+    _heapSort(array, cases);
+
+    for (int i = 0; i < cases; ++i) {
+        printf("%d\t::\t%d\n", array[i], control[i]);
+        if (array[i] == control[i]) {
+            ++result;
+        }
+    }
+    return result;
+}
+
 int testSort(int cases) {
     
     char** array = malloc(sizeof(char*) * cases);
     char** control = malloc(sizeof(char*) * cases);
-    char* generatedString;
     int result = 0;
 
     // filling the arrays
     for (int i = 0; i < cases; ++i) {
-        array[i] = generateLinearString(i, cases - i);
+        array[i] = generateLinearString(i, i);
         control[i] = generateLinearString(i, i);
     }
 

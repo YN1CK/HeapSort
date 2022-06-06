@@ -9,5 +9,9 @@
 
 int main() {
 
+    int a = 50;
+    int b;
+    b = _testSort(a);
+    printf("%d / %d tests were successful\n", b, a);
     return 0;
 }
