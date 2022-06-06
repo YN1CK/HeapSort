@@ -5,13 +5,14 @@ char* generateLinearString(int n, int base) {
     const char* literals = "abcdefghijklmnopqrstuvwxyz";
     char* tmp = malloc(sizeof(char) * n);
     int reset = 0;
-    for (int i = 0; i < n-1; ++i) {
+    for (int i = 0; i < n - 1; ++i) {
         while (base + i - reset > 26) {
-            reset += 26;
+            reset += 25;
         }
-        *(tmp + sizeof(char) * i) = literals[base+i-reset];
+        tmp[i] = literals[base+i-reset];
     }
     tmp[n-1] = '\0';
+    printf("Test: %s\n", tmp);
     return tmp;
 }
 

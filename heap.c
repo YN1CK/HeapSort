@@ -73,19 +73,24 @@ void heapify(char** array, int rootIndex, int length) {
     childRight = 2 * rootIndex + 2;
 
     // check if child is in array and if it's larger than newRoot
-    if ((childLeft < length) && (strcasecmp(array[childLeft], array[newRoot]) + 1)) {
-        newRoot = childLeft;
+    if (childLeft < length) {
+        if (strcasecmp(array[childLeft], array[newRoot]) >= 0) {
+            newRoot = childLeft;
+        }
     }
     
     // check if other child is also in array and if its larger than newRoot
-    if ((childRight < length) && (strcasecmp(array[childRight], array[newRoot]) + 1)) {
-        newRoot = childRight;
+    if (childRight < length) { 
+        if(strcasecmp(array[childRight], array[newRoot]) >= 0) {
+            newRoot = childRight;
+        }
     }
 
     // swap if newRoot has changed and continue heapifying with newRoot
     if (newRoot != rootIndex) {
         swap(&array[rootIndex], &array[newRoot]);
         heapify(array, newRoot, length);
+        printf("Root: %s\n%s\t-\t%s\n\n", array[rootIndex], array[childLeft], array[childRight]);
     }
 }
 

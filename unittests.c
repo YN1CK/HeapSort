@@ -29,8 +29,9 @@ int testSort(int cases) {
 
     // filling the arrays
     for (int i = 0; i < cases; ++i) {
-        array[i] = generateLinearString(i, i);
-        control[i] = generateLinearString(i, i);
+        array[i] = generateLinearString(i + 2, i);
+        control[i] = generateLinearString(i + 2, i);
+        printf("Verify: %s\n\n", array[i]);
     }
 
     // sorting the first array
@@ -38,7 +39,6 @@ int testSort(int cases) {
 
     // testing the sorted array
     for (int i = 0; i < cases; ++i) {
-        printf("%s\n", array[i]);
         if (strcmp(array[i], control[i]) == 0) {
             ++result;
         }
