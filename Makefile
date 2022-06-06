@@ -1,5 +1,4 @@
 # Makefile
-# Yannick Reiss
 NAME		=	HeapSort
 CC		=	gcc
 CFLAGS	=	-Wall -g -I include
