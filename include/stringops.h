@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <time.h>
 
-char* generateLinearString(int n, int base);
-char* generateRandomString(int length);
+char* generateLinearString(int n, unsigned long x);
 
 #endif//STRINGOPS_H

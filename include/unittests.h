@@ -10,6 +10,6 @@
 
 int _testSort(int cases);
 
-int testSort(int cases);
+int testSort(unsigned long cases);
 
 #endif//UNITTESTS_H

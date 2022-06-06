@@ -90,7 +90,6 @@ void heapify(char** array, int rootIndex, int length) {
     if (newRoot != rootIndex) {
         swap(&array[rootIndex], &array[newRoot]);
         heapify(array, newRoot, length);
-        printf("Root: %s\n%s\t-\t%s\n\n", array[rootIndex], array[childLeft], array[childRight]);
     }
 }
 
