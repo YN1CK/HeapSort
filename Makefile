@@ -27,6 +27,10 @@ run: $(NAME)
 check: $(NAME)
 	make; make clean
 
+# creates diagram with python3, matplotlib
+visualize:
+	python3 visualize.py
+
 # clean up objects and executable
 clean:
 	rm $(NAME) *.o

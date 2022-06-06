@@ -13,7 +13,7 @@ int main() {
                             1000000, 2000000, 4000000, 8000000};
 
     for (int i = 0; i < 13; ++i) {
-        testSpeed(cases);
+        testSpeed(cases[i]);
     }
 
     return EXIT_SUCCESS;
