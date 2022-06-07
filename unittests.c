@@ -63,9 +63,15 @@ long long timeInMilliseconds(void) {
 }
 
 void testSpeed(unsigned long size) {
+
+    // opening file to store
     FILE* data = fopen("runtime.csv", "a+");
+
+    // timestamp gets assigned at start and stop
     long long tStart;
     long long tStop;
+
+    // allocating memory for array
     char** array = malloc(sizeof(char*) * size);
 
     // generating array
@@ -87,4 +93,7 @@ void testSpeed(unsigned long size) {
 
     fprintf(data, "%ld, %lld\n", size, tStop - tStart);
     fclose(data);
+
+    // clean up array
+    free(array);
 }
