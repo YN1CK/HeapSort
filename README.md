@@ -14,5 +14,5 @@ Die Befehle der Makefile sind:
 - `make clean` um alle Objektdateien und das Programm zu löschen
 
 3. ### Einstufung der Laufzeit, Ergebnisse der Laufzeitermittlung
-Die Laufzeit des HeapSort beträgt `n * log2(n)` mit der ungefähren Konstanten c = 1:8100. 
+Die Laufzeit des HeapSort beträgt `n * log2(n)` mit der ungefähren Konstanten c = 7000^(-1). 
 ![File not Found](Messwerte.png)

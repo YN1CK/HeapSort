@@ -25,16 +25,16 @@ char* generateRandomString(int length) {
 
     // allocate data
     char* temp;
-    temp = malloc(sizeof(char) * length + 1);
+    temp = malloc(sizeof(char) * (length + 1));
     const char* base = "abcdefghijklmnopqrstuvwxyz";
 
 
  
-    for (int i = 0; i < length - 1; ++i) {
+    for (int i = 0; i <= length; ++i) {
         srand(time(NULL) * rand() + rand() % 15);
         temp[i] = base[rand() % 26];
         }
-    temp[length-1] = '\0';
+    temp[length] = '\0';
 
     return temp;
 }
