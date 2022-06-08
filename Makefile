@@ -26,14 +26,10 @@ run: $(NAME)
 check: $(NAME)
 	make; make clean
 
-# creates diagram with python3, matplotlib
-visualize:
-	python3 visualize.py
-
 # compress into tarball
 archive: $(NAME)
 	make clean
-	tar -zcvf ../$(NAME).tgz ./
+	tar -zcvf ../Arianfar_Reiss_$(NAME).tgz ./
 
 # clean up objects and executable
 clean:
@@ -41,6 +37,5 @@ clean:
 
 .PHONY: run
 .PHONY: check
-.PHONY: visualize
 .PHONY: archive
 .PHONY: clean
