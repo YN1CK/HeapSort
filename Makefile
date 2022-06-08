@@ -30,10 +30,17 @@ check: $(NAME)
 visualize:
 	python3 visualize.py
 
+# compress into tarball
+archive: $(NAME)
+	make clean
+	tar -zcvf ../$(NAME).tar.gz ./
+
 # clean up objects and executable
 clean:
 	rm $(NAME) *.o
 
 .PHONY: run
 .PHONY: check
+.PHONY: visualize
+.PHONY: archive
 .PHONY: clean
