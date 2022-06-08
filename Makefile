@@ -33,7 +33,7 @@ visualize:
 # compress into tarball
 archive: $(NAME)
 	make clean
-	tar -zcvf ../$(NAME).tar.gz ./
+	tar -zcvf ../$(NAME).tgz ./
 
 # clean up objects and executable
 clean:
