@@ -9,11 +9,6 @@
 #include "heap.h"
 #include "stringops.h"
 
-// testSort for the integer implementation
-// cases = amount of tests
-// returns the amount of successful tests
-int _testSort(int cases);
-
 // testSort for the string implementation
 // cases = amount of tests
 // returns the amount of successful tests
